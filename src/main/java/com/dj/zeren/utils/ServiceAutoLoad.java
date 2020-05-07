@@ -17,7 +17,7 @@ import java.util.TreeMap;
 public class ServiceAutoLoad {
 
     public static Map<ProcessName, String> map = new TreeMap<ProcessName, String>(new MapKeyComparator());
-    private static final String ORDER_STEP_PKG_PATH = "com.mw.zerenlian";
+    private static final String ORDER_STEP_PKG_PATH = "com.dj.zeren";
 
     static {
         // 反射工具包，指明扫描路径

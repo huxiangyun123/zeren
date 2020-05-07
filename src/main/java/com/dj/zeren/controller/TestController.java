@@ -5,9 +5,7 @@ import com.dj.zeren.model.ServiceContext;
 import com.dj.zeren.model.ServiceResponse;
 import com.dj.zeren.service.TestExcutorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 2 * @Author: Chris
@@ -20,10 +18,10 @@ public class TestController {
     @Autowired
     TestExcutorService testExcutorService;
 
-    @PostMapping("/test")
-    public ServiceResponse test(@RequestBody TestDto dto){
+    @GetMapping("/test")
+    public ServiceResponse test(){
         ServiceContext context = new ServiceContext();
-        context.createRequestBody(dto);
+        context.createRequestBody(null);
         //基本执行条件
         testExcutorService.execute(context);
         return context.getResponse();
